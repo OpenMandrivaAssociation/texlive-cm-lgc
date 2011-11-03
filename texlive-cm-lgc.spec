@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/ps-type1/cm-lgc
+# catalog-date 2008-06-12 19:44:55 +0200
+# catalog-license gpl
+# catalog-version 0.5
 Name:		texlive-cm-lgc
 Version:	0.5
 Release:	1
@@ -462,6 +468,7 @@ standards, and virtual fonts are provided for use with TeX.
 %doc %{_texmfdistdir}/doc/latex/cm-lgc/HISTORY
 %doc %{_texmfdistdir}/doc/latex/cm-lgc/INSTALL
 %doc %{_texmfdistdir}/doc/latex/cm-lgc/README
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -472,3 +479,5 @@ standards, and virtual fonts are provided for use with TeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
