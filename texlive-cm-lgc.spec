@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The fonts are converted from MetaFont sources of the Computer
@@ -32,20 +30,12 @@ single size only; it offers a compact set for 'general'
 working. The fonts themselves are encoded to external
 standards, and virtual fonts are provided for use with TeX.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -469,7 +459,6 @@ standards, and virtual fonts are provided for use with TeX.
 %doc %{_texmfdistdir}/doc/latex/cm-lgc/HISTORY
 %doc %{_texmfdistdir}/doc/latex/cm-lgc/INSTALL
 %doc %{_texmfdistdir}/doc/latex/cm-lgc/README
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -480,5 +469,3 @@ standards, and virtual fonts are provided for use with TeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
