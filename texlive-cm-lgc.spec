@@ -469,3 +469,18 @@ standards, and virtual fonts are provided for use with TeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.5-2
++ Revision: 750311
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.5-1
++ Revision: 718081
+- texlive-cm-lgc
+- texlive-cm-lgc
+- texlive-cm-lgc
+- texlive-cm-lgc
+- texlive-cm-lgc
+
