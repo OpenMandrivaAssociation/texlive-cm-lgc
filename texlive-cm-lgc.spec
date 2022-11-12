@@ -1,18 +1,12 @@
-# revision 28250
-# category Package
-# catalog-ctan /fonts/ps-type1/cm-lgc
-# catalog-date 2012-06-26 00:41:30 +0200
-# catalog-license gpl
-# catalog-version 0.5
 Name:		texlive-cm-lgc
-Version:	0.5
-Release:	12
+Version:	28250
+Release:	1
 Summary:	Type 1 CM-based fonts for Latin, Greek and Cyrillic
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/ps-type1/cm-lgc
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.r28250.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.doc.r28250.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -31,12 +25,12 @@ working. The fonts themselves are encoded to external
 standards, and virtual fonts are provided for use with TeX.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -693,7 +687,7 @@ standards, and virtual fonts are provided for use with TeX.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
