@@ -5,8 +5,8 @@ Summary:	Type 1 CM-based fonts for Latin, Greek and Cyrillic
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/ps-type1/cm-lgc
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.r28250.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.doc.r28250.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
