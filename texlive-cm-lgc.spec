@@ -1,6 +1,6 @@
 Name:		texlive-cm-lgc
 Version:	28250
-Release:	1
+Release:	2
 Summary:	Type 1 CM-based fonts for Latin, Greek and Cyrillic
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/ps-type1/cm-lgc
