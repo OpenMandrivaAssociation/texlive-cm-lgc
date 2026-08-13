@@ -1,9 +1,10 @@
 %global tl_name cm-lgc
 %global tl_revision 28250
+%global tl_version 0.5
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	0.5
+Version:	%{tl_version}
 Release:	%{tl_revision}.1
 Summary:	Type 1 CM-based fonts for Latin, Greek and Cyrillic
 Group:		Publishing
@@ -13,7 +14,8 @@ Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.r%{tl_rev
 Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cm-lgc.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
 BuildSystem:	texlive
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 The fonts are converted from Metafont sources of the Computer Modern
@@ -26,3 +28,10 @@ a single size only; it offers a compact set for 'general' working. The
 fonts themselves are encoded to external standards, and virtual fonts
 are provided for use with TeX.
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_updmap_d}
+cat > %{buildroot}%{_texmf_updmap_d}/%{tl_name} <<'TL_DROPIN_EOF'
+# from cm-lgc:
+Map cm-lgc.map
+TL_DROPIN_EOF
